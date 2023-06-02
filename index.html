@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  
+  <title>Elden Thing</title>
+
+  <script type="module" crossorigin src="/assets/index-a391b83d.js"></script>
+  <link rel="stylesheet" href="/assets/index-c06a59a8.css">
+</head>
+
+<body>
+  
+  <audio id='audio' src = "assets\audio\ui\sfx.mp3"></audio>
+  <audio id="hit"></audio>
+  <audio id="normal" src = 'assets\audio\music\theme.ogg'></audio>
+  <audio id="title" src="assets\audio\music\title.ogg"></audio>
+
+  <div id="login">
+    <h2>Welcome</h1>
+    <button class = 'button' id="new" onclick="playaudio()">New User?</button>
+    <p id="status"></p>
+    <input id="pass" placeholder="Enter ID Here">
+    <button class='button' id="load" onclick="playaudio()">Load Game</button>
+  </div>
+
+  
+
+  <div id="game">
+<div id='thing'>
+    <div id="shop">
+      <h2 id="gold"></h2>
+      <h3 id="gmult"></h3>
+      <button class = 'button' id="bstr" onclick="playaudio()"></button>
+      <button class = 'button' id="bg" onclick="playaudio()"></button>
+      <button class = 'button' id='bhp' onclick="playaudio()"></button>
+      <button class = 'button' id='regen' onclick="playaudio()"></button>
+    <img id="save" src="/assets/save-53f890b8.png">
+    </div>
+    <img class = 'image' id="enemy_png" onclick=playhit()>
+</div>
+
+      
+      <div id="enemyplayer">
+      <h1 class = 'hp' id="enemy_hp"></h1>
+      <progress class = 'hpbar' id="hpbarnmy" value="" max=""></progress>
+      <h2 id="nmystr"></h2>
+      <h1 id="name"></h1>
+      <h2  id="player_hp"></h2>
+      <progress class = 'hpbar' id="hpbarp" value="" max=""></progress>
+      <h2 class = "stats" id="str"></h2>
+      </div>
+
+      <div id="stats">
+          <p class = "stats" id="code">
+          <p class = "stats" id="nmyt"></p>
+      </div>
+      </div>
+
+    <script>
+      function playaudio() {
+        let audio = document.getElementById("audio");
+        audio.volume = .8
+        audio.play();
+      }
+
+      function playhit(){
+        let audio = document.getElementById('hit');
+        audio.volume = .2
+        audio.src = 'assets/audio/enemy/' + Math.floor(Math.random() * (18 - 1 + 1) + 1) + '.ogg'
+        audio.play();
+      }
+    </script>
+
+  
+
+  
+</body>
+
+</html>
