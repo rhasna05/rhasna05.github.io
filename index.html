@@ -6,10 +6,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   
+  <link rel="icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAGABoAwAAFgAAACgAAAAQAAAAIAAAAAEAGAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAABJTi5MUTxUXFJZaGdijKNjnstjodJrtuFjodJhhJZhlLBUamxTZWRUYk1aXTZBRBddbGBfdnJfi6dfnM9owfFt2PZXp+hy5/2Q7frP9/h+3v1SmNtKcJBPanNRZ1xHTC9Ya29Uc49amMpiu+xWgsBPfrxVpt1dw/VUhsFLeK1Lc6phwfpYqOJFbaFNcpJabWNOcp1Qbo1QjsVcksVmns1ahrxLbpxHdrBMeKRJa5pIbqBDaJRPtepKdbBScI5EWWFIZYFKa4iDx+1DWGpKV2ZOa4mBzPbq/vxUjMFOgLZGYoZAX5NfueZhksNQbYk9RD5OaGpHY3NWhKlAUldAS0s/T3NCU3M+ZpVFVWVJaYlAT2U5SFqu5fVBW3lBTlZATEhCSS5GUkBIcZc8VmI7TGRBS01GXn1Rib5CWHE6S2JFXHtDV2YzU38zQUguMjA2Pjw7QCA5QzI6RTBDcYk+ZIU6QDVJVXFZsNo+SU08QDZDbIpEan4yPS0zOi8wNyoxMyc4ORk0Ohs3PSQ5SThRmtFGb4w9RUF50+5HVWk9UmM2QDQ1PCcvMhksLRkuLxs0PSM7PBVCRh1GSSZBTTVmx+s1QUMyPzBoudNNcHQ7PiVIaW86OR01NRcuMBMuLRAyMxI+PxU0NBA6OhY2PBk1Py0zWWwxOjMhUYEtNR88TVswMhsvMRMsLhExMhM4OBQtLQ4nKAsrKw0xMBEvMBAqKxEuOScoNys7jM8lNjclLx0qLA8rLA8nKA4tLQ8yMRAmKAscHgodIAoeIQsjIg0fIQsjIg0hIw0bOT0fJA8fIQ0eIAwcHgoeHgwdHgocHgoeIQsWGwgXGwgZHQkYHAkZHAkZHQoeHwsdLCsbJxobHgwYHAkVGgcVGgoSGQkUGQkUGgkPFgkSFwgTGAkUGQoUGgkXIBMWKSNGquIZOz8VKSUVHxITGAkSFwgTGAkUGQoTGAkKEgcKEgcNFwsOGxEoU28UKScTLTAVMjkSKCYQKioXPkwMGQ8MFgoMFAkPFgkPFgkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" type="image/x-icon" />
   <title>Elden Thing</title>
 
-  <script type="module" crossorigin src="/assets/index-a391b83d.js"></script>
-  <link rel="stylesheet" href="/assets/index-c06a59a8.css">
+  <script type="module" crossorigin src="/assets/index-120b6ef6.js"></script>
+  <link rel="stylesheet" href="/assets/index-6b9348a7.css">
 </head>
 
 <body>
@@ -20,7 +21,7 @@
   <audio id="title" src="assets\audio\music\title.ogg"></audio>
 
   <div id="login">
-    <h2>Welcome</h1>
+    <h2 id="welcome">Welcome</h1>
     <button class = 'button' id="new" onclick="playaudio()">New User?</button>
     <p id="status"></p>
     <input id="pass" placeholder="Enter ID Here">
@@ -61,13 +62,13 @@
       </div>
 
     <script>
-      function playaudio() {
+      async function playaudio() {
         let audio = document.getElementById("audio");
         audio.volume = .8
         audio.play();
       }
 
-      function playhit(){
+      async function playhit(){
         let audio = document.getElementById('hit');
         audio.volume = .2
         audio.src = 'assets/audio/enemy/' + Math.floor(Math.random() * (18 - 1 + 1) + 1) + '.ogg'
